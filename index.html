@@ -30,8 +30,8 @@
             background-color: #2c2c2c;
             border-radius: 12px;
             box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
-            width: 95%;
-            max-width: 1024px;
+            width: 90%;
+            max-width: 900px; /* Adjusted for a smaller size */
             margin: auto;
             padding: 20px;
             box-sizing: border-box;
@@ -42,7 +42,7 @@
             border-radius: 8px;
             width: 100%;
             height: auto;
-            max-height: 80vh; /* Adjust to fit within viewport */
+            max-height: 70vh; /* Reduced size to fit better */
         }
 
         /* Loading bar styles */
@@ -92,14 +92,20 @@
             box-sizing: border-box;
         }
 
-        #unity-webgl-logo, #unity-fullscreen-button {
+        #unity-webgl-logo {
+            width: 32px;
+            height: 32px;
+            margin-right: 10px; /* Added margin to ensure it doesn't get cut off */
+        }
+
+        #unity-fullscreen-button {
             width: 32px;
             height: 32px;
             cursor: pointer;
         }
 
         #unity-build-title {
-            font-size: 20px;
+            font-size: 18px;
             font-weight: bold;
         }
 
@@ -137,7 +143,7 @@
 </head>
 <body>
     <div id="unity-container" class="unity-desktop">
-        <canvas id="unity-canvas" width="960" height="600"></canvas>
+        <canvas id="unity-canvas" width="800" height="450"></canvas> <!-- Smaller dimensions for the canvas -->
         <div id="unity-loading-bar">
             <div id="unity-logo"></div>
             <div id="unity-progress-bar-empty">
@@ -146,7 +152,7 @@
         </div>
         <div id="unity-warning"></div>
         <div id="unity-footer">
-            <div id="unity-webgl-logo"></div>
+            <img id="unity-webgl-logo" src="TemplateData/unity-logo.png" alt="Unity Logo">
             <div id="unity-build-title">Mouse Golf</div>
             <div id="unity-fullscreen-button"></div>
         </div>
