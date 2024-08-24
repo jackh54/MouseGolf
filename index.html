@@ -14,6 +14,7 @@
             font-family: Arial, sans-serif;
             background-color: #f0f0f0;
             color: #333;
+            height: 100%;
         }
 
         /* Center the Unity container */
@@ -22,17 +23,21 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            height: 100vh;
+            height: 80vh; /* Adjusted height to ensure full visibility of the game */
             background-color: #fff;
             border-radius: 8px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            overflow: hidden;
             position: relative;
+            width: 100%;
+            max-width: 960px; /* Maximum width for better control */
+            margin: 20px auto; /* Center horizontally */
         }
 
         #unity-canvas {
             border: 2px solid #ddd;
             border-radius: 4px;
+            width: 100%;
+            height: 100%;
         }
 
         /* Loading bar styles */
@@ -45,11 +50,12 @@
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
+            width: 100%;
+            max-width: 400px;
         }
 
         #unity-progress-bar-empty {
             width: 100%;
-            max-width: 400px;
             background: #ddd;
             border-radius: 5px;
             overflow: hidden;
@@ -88,7 +94,6 @@
         #feedback-button {
             display: inline-block;
             width: 200px;
-            margin: 20px auto;
             padding: 12px;
             text-align: center;
             font-size: 16px;
@@ -100,6 +105,8 @@
             cursor: pointer;
             text-decoration: none;
             transition: background-color 0.3s ease;
+            position: absolute;
+            bottom: 20px; /* Positioned at the bottom of the container */
         }
 
         #feedback-button:hover {
@@ -133,10 +140,9 @@
             <div id="unity-fullscreen-button"></div>
             <div id="unity-build-title">Mouse Golf</div>
         </div>
+        <!-- Feedback Button -->
+        <a href="https://forms.gle/mpgFRQiojKqQKcMv5" id="feedback-button" target="_blank">Leave Feedback</a>
     </div>
-
-    <!-- Feedback Button -->
-    <a href="https://forms.gle/mpgFRQiojKqQKcMv5" id="feedback-button" target="_blank">Leave Feedback</a>
 
     <script>
         var container = document.querySelector("#unity-container");
@@ -186,8 +192,8 @@
             canvas.className = "unity-mobile";
             unityShowBanner('WebGL builds are not supported on mobile devices.');
         } else {
-            canvas.style.width = "960px";
-            canvas.style.height = "600px";
+            canvas.style.width = "100%";
+            canvas.style.height = "100%";
         }
 
         loadingBar.style.display = "block";
